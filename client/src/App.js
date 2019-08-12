@@ -71,6 +71,8 @@ class Image extends React.Component {
   checkHit() {
     console.log(this.state.clickHit);
     if (this.state.clickHit) {
+      // global variable doesn't work because navbar component will not update
+      // when the global variable changes
       score += 1;
       topScore += 1;
       answer = true;
@@ -86,7 +88,7 @@ class Image extends React.Component {
   }
 
   render() {
-    return <img src={this.props.link} alt={this.props.name} onClick={this.checkHit} />
+    return <img src={this.props.link} alt={this.props.name} onClick={this.checkHit} width="50%" height="80%" />
   }
 }
 
